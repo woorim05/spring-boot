@@ -14,6 +14,7 @@ import java.util.StringJoiner;
 @Slf4j
 @Service
 public class OrderPrinter implements Printer<ProductOrder> {
+    // public 생성자가 하나만 있는 경우 생성자 주입 방식으로 의존성 주입을 실행할 수 잇음
 
     private Formatter formatter;
 
