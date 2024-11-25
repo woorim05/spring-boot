@@ -19,15 +19,15 @@ import java.util.List;
 @Getter
 public class HotelRoomResponse {
 
-    @JsonProperty("id")
-    @JsonSerialize(using = ToStringSerializer.class)
+    @JsonProperty("id") // json 내에서 다른 이름을 사용하고자 할 때
+    @JsonSerialize(using = ToStringSerializer.class) // json 내에 String 으로 타입을 변경하려고 할 때
     private final Long hotelRoomId;
 
     private final String roomNumber;
 
     private final HotelRoomType hotelRoomType;
 
-    @JsonSerialize(using = ToDollarStringSerializer.class)
+    @JsonSerialize(using = ToDollarStringSerializer.class) // BigDecimal 사용자 정의화
     private final BigDecimal originalPrice;
 
     private final List<Reservation> reservations;
@@ -55,6 +55,7 @@ public class HotelRoomResponse {
         @JsonSerialize(using = ToStringSerializer.class)
         private final Long reservationId;
 
+        // date, calendar 객체를 원하는 포맷으로 변경하는 역할
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
         private final LocalDate reservedDate;
 

@@ -26,14 +26,14 @@ public enum HotelRoomType {
         this.param = param;
     }
 
-    @JsonCreator
+    @JsonCreator // 언마셜링 과정에서 값 변환에 사용되는 메서드를 지정하는 애너테이션
     public static HotelRoomType fromParam(String param) {
         return Optional.ofNullable(param)
                 .map(paramMap::get)
                 .orElseThrow(() -> new IllegalArgumentException("param is not valid"));
     }
 
-    @JsonValue
+    @JsonValue // 마셜링 과정에서 값 변환에 사용되는 메서드를 지정하는 애너테이션
     public String getParam() {
         return this.param;
     }
