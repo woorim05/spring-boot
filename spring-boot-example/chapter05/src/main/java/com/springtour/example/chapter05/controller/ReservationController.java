@@ -20,6 +20,13 @@ import java.util.List;
 @RestController
 public class ReservationController {
 
+    /**
+     *  Pageable parameter
+     *  - page: 페이지 번호, 0부터 시작
+     *  - size: 페이지당 포함할 정보의 개수기본값 20
+     *  - sort: (프로퍼티이름,방향키워드) <- 여러 개 입력 가능
+     *
+     */
     @GetMapping("/hotels/{hotelId}/rooms/{roomNumber}/reservations")
     public List<Long> getReservationsByPaging(@PathVariable Long hotelId,
                                               @PathVariable String roomNumber,

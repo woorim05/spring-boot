@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @ToString
 public class HotelRoomUpdateRequest {
 
+    // 컨트롤러에서 @Valid 어노테이션과 함께 사용해야 작동함
     @NotNull(message = "roomType can't be null")
     private HotelRoomType roomType;
 
